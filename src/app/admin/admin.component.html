@@ -1,0 +1,51 @@
+<div>
+    <div id="headerMain">
+        <!--<h3 (click)="goToHome()" style="color: white;cursor: pointer;" class="ui left floated header">
+            Home
+        </h3>-->
+        <h3 style="color: white;cursor: pointer;padding-left: 10%;" class="ui left floated header">
+            Welcome
+        </h3>
+        <div>
+            <h3 (click)="logOut()" style="color: white;cursor: pointer;" class="ui right floated header">
+                Log Out
+            </h3>
+        </div>
+    </div>
+
+    <div id="adminContainer">
+
+        <!--<div>
+            Can deactivate:
+            <input #candeactivate type="checkbox" (change)="checkboxChanged(candeactivate.checked)" />
+        </div>-->
+
+        <div class="content">
+            <div id="imgDiv" class="ui tiny images">
+                <div class="div" (click)="project()">
+                    <img class="image" src="/assets/img/project.png">
+                    <div>
+                        <h4>Projects</h4>
+                    </div>
+                </div>
+                <div class="div" (click)="users()">
+                    <img class="image" src="/assets/img/users.png ">
+                    <div>
+                        <h4>Users</h4>
+                    </div>
+                </div>
+                <div class="div">
+                    <img class="image" src="/assets/img/timesheet.png ">
+                    <div>
+                        <h4>Timesheet</h4>
+                    </div>
+                </div>
+                <div class="div">
+                    <img class="image" src="/assets/img/news.jpg">
+                    <div>
+                        <h4>News</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

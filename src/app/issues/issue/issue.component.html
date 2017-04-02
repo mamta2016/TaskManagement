@@ -1,0 +1,40 @@
+<table style="margin: 2%;" class="ui striped table">
+    <thead>
+        <tr>
+            <th></th>
+            <th>
+                <h5>New</h5>
+            </th>
+            <th>
+                <h5>Completed</h5>
+            </th>
+            <th>
+                <h5>InProgress</h5>
+            </th>
+            <th>
+                <h5>OnHold</h5>
+            </th>
+            <th>
+                <h5>Total</h5>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><a class="item" (click)="onBugClick()"> Bug</a></td>
+            <td><a class="item"> {{NewB}}</a></td>
+            <td><a class="item"> {{CompletedB}}</a></td>
+            <td><a class="item"> {{InProgressB}}</a></td>
+            <td><a class="item"> {{OnHoldB}}</a></td>
+            <td><a class="item">{{totalB}}</a></td>
+        </tr>
+        <tr>
+            <td><a class="item" (click)="onTaskClick()"> Task</a></td>
+            <td><a class="item"> {{NewT}}</a></td>
+            <td><a class="item"> {{CompletedT}}</a></td>
+            <td><a class="item"> {{InProgressT}}</a></td>
+            <td><a class="item"> {{OnHoldT}}</a></td>
+            <td><a class="item"> {{totalT}}</a></td>
+        </tr>
+    </tbody>
+</table>

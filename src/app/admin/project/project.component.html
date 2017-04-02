@@ -1,0 +1,106 @@
+<div class="mainDiv">
+
+    <div id="header">
+        <button (click)="goToHome()" id="button2" class="ui left floated teal button">Home</button>
+        <button (click)="addNew()" id="button1" class="ui left floated teal button ">Add New</button>
+        <h3 style="color: white;padding-left: 25%;padding-top: 1.2%;" class="ui left floated header">
+            Company Projects
+        </h3>
+        <div>
+            <h3 (click)="logOut()" style="color: white;cursor: pointer;padding-top: 1.2%;" class="ui right floated header">
+                Log Out
+            </h3>
+        </div>
+    </div>
+
+    <div>
+        <table>
+            <tr>
+                <th style="display: none;">Project _id</th>
+                <th (click)="onProject()">Project Name</th>
+                <th>Project Description</th>
+                <th style="display: none;">Project users</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+            <tr *ngFor="let project of projects">
+                <td style="display: none;">{{project._id}}</td>
+                <td (click)="onProject(project)">{{project["name"]}}</td>
+                <td>{{project.description}}</td>
+                <td style="display: none;">{{project.users}}</td>
+                <td><button (click)="editBtn(project)" class="ui blue button">Edit</button></td>
+                <td>
+                    <button (click)="delBtnPopup(project)" class="ui red button">Delete</button>
+                    <!--<h2 (click)="delBtnPopup(project)"><i style="cursor: pointer;" class="remove circle icon"></i></h2>-->
+                    <!--delete Project PopUp-->
+                    <div class="ui small modal" id="deletPopUp">
+                        <div class="header">Delete Your Account</div>
+                        <div class="content">
+                            <h4>Are you sure you want to delete your Project </h4>
+                        </div>
+                        <div class="actions">
+                            <div (click)="deleteProject()" class="ui green approve button">
+                                <h3>Yes<i class="checkmark icon"></i></h3>
+                            </div>
+                            <div class="ui red cancel button">
+                                <h3>No</h3>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+</div>
+
+<!--PopUp template page-->
+<div class="ui modal" id="newProject">
+    <div class="content">
+        <form class="ui form" id="uiForm">
+            <div style="display: none;">
+                {{_id}}
+            </div>
+            <div>
+                <h3 style="padding-top: 1%;margin-top: 1%;">Name:</h3>
+            </div>
+            <div class="ui fluid icon input">
+                <input [(ngModel)]="name" name="name" style="margin: 1%;" type="text" required>
+            </div>
+            <div>
+                <h3 style="padding-top: 1%;margin-top: 1%;">Description:</h3>
+            </div>
+            <div class="ui fluid icon input">
+                <textarea [(ngModel)]="description" name="description" id="description" required></textarea>
+            </div>
+        </form>
+        <div>
+            <h3>Users:</h3>
+            <div id="users">
+                <div class="ui grid">
+                    <div class="eight wide column">
+                        <h3>Name</h3>
+                    </div>
+                    <div class="eight wide column">
+                        <h3>Assign</h3>
+                    </div>
+                </div>
+                <div class="ui grid">
+                    <div class="two column row" *ngFor="let user of allUsers ">
+                        <div class="four wide column" style="display: none;">{{user._id}}</div>
+                        <div class="eight wide column">{{user.name.first}} {{user.name.last}}</div>
+                        <div class="eight wide column">
+                            <input type="checkbox" value="{{user._id}}" [(ngModel)]="user.isSelectedUser">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="actions ">
+        <button id="create" (click)="createBtn()" class="ui primary submit button" type="submit">Create</button>
+        <button id="update" (click)="updateBtn()" class="ui primary submit button" type="submit">Update</button>
+        <div class="ui cancel button ">Cancel</div>
+    </div>
+</div>

@@ -1,0 +1,40 @@
+.mainDiv {
+    width: 100%;
+    height: 100%;
+}
+
+#header {
+    height: 10%;
+    background-color: rebeccapurple;
+}
+
+#adduser {
+    float: left;
+    margin: 1%;
+}
+
+#grid {
+    padding: 3%;
+    padding-top: 3%;
+}
+
+table {
+    border: 1px solid #dddddd;
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th {
+    text-align: left;
+    padding: 8px;
+}
+
+td {
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}

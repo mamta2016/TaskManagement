@@ -1,0 +1,161 @@
+<table style="margin: 2%;" class="ui striped table">
+    <thead>
+        <tr>
+            <th>
+                <h5>Tracker</h5>
+            </th>
+            <th>
+                <h5>Subject</h5>
+            </th>
+            <th>
+                <h5>Description</h5>
+            </th>
+            <th>
+                <h5>Status</h5>
+            </th>
+            <th>
+                <h5>Assignee</h5>
+            </th>
+            <th>
+                <h5>Priority</h5>
+            </th>
+            <th>
+                <h5>Start Date</h5>
+            </th>
+            <th>
+                <h5>End Date</h5>
+            </th>
+            <th>
+                <h5>Edit</h5>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let issue of issuesTask">
+            <td style="display: none;">{{issue._id}}</td>
+            <td>{{issue.tracker}}</td>
+            <td>{{issue.subject}}</td>
+            <td>{{issue.description}}</td>
+            <td>{{issue.status}}</td>
+            <td>{{issue.assignee}}</td>
+            <td>{{issue.priority}}</td>
+            <td>{{issue.sDate}}</td>
+            <td>{{issue.eDate}}</td>
+            <td><button (click)="editBtn(issue)" class="ui blue button">Edit</button></td>
+        </tr>
+    </tbody>
+</table>
+
+
+<div class="ui large modal" id="newIssue">
+    <div class="content">
+
+        <form class="ui form ">
+            <!--<div class="ui grid">
+
+                <div style="text-align: right;" class="two wide column">
+                    <h4>Id Number:</h4>
+                </div>
+                <div class="three wide column">
+                    <input type="number" [(ngModel)]="id" name='id' palceholder="" required>
+                </div>
+            </div>-->
+            <div style="display: none;">{{projectId}}</div>
+            <div class="ui grid">
+                <div style="text-align: right;" class="two wide column">
+                    <h4>Tracker:</h4>
+                </div>
+                <div class="three wide column">
+                    <select [(ngModel)]="tracker" name='tracker' required>
+                        <option >Bug</option>
+                        <option >Task</option>
+                    </select>
+                </div>
+            </div>
+            <div class="ui grid">
+                <div style="text-align: right;" class="two wide column">
+                    <h4>Subject:</h4>
+                </div>
+                <div class="twelve wide column">
+                    <input type="text" [(ngModel)]="subject" name='subject' required>
+                </div>
+            </div>
+            <div class="ui grid">
+                <div style="text-align: right;" class="two wide column">
+                    <h4>Description:</h4>
+                </div>
+                <div class="twelve wide column">
+                    <textarea rows="2" [(ngModel)]="description" name='description' required></textarea>
+                </div>
+            </div>
+            <div class="ui grid">
+                <div style="text-align: right;" class="two wide column">
+                    <h4>Status:</h4>
+                </div>
+                <div class="three wide column">
+                    <select [(ngModel)]="status" name='status' required>
+                        <option>New</option>
+                        <option>Completed</option>
+                        <option>In Progress</option>
+                        <option>On Hold</option>
+                    </select>
+                </div>
+                <div style="text-align: right;" class="four wide column">
+                    <h4>Assignee:</h4>
+                </div>
+                <div class="three wide column">
+                    <!--<div [(ngModel)]="assnedUsrId" style="display: none;">{{users._id}}</div>-->
+                    <select [(ngModel)]="assnedUsrId" name='assnedUsrId' required>
+                        <option *ngFor="let user of users" value="{{user._id}}"><h3>{{user.name.first}}</h3></option>
+                    </select>
+                </div>
+            </div>
+            <div class="ui grid">
+                <div style="text-align: right;" class="two wide column">
+                    <h4>Priority:</h4>
+                </div>
+                <div class="three wide column">
+                    <select [(ngModel)]="priority" name='priority' required>
+                        <option>Normal</option>
+                        <option>High</option>
+                        <option>Low</option>
+                    </select>
+                </div>
+                <div style="text-align: right;" class="four wide column">
+                    <h4>Start Date:</h4>
+                </div>
+                <div class="three wide column">
+                    <input type="date" [(ngModel)]="sDate" name='sDate' required>
+                </div>
+            </div>
+            <div class="ui grid">
+                <div style="text-align: right;" class="two wide column">
+                    <h4>Choose File:</h4>
+                </div>
+                <div class="three wide column">
+                    <input (change)="uploadImage($event)" type="file" [(ngModel)]="image" name='image' value="image">
+                    <img id="selectedImage" height="100px;" width="100px;" class="image" src="{{image}}">
+                    <!--<img src="{{image}}">-->
+                </div>
+                <div style="text-align: right;" class="four wide column">
+                    <h4>End Date:</h4>
+                </div>
+                <div class="three wide column">
+                    <input type="date" [(ngModel)]="eDate" name='eDate' required>
+                </div>
+            </div>
+            <div class="ui grid">
+                <div style="text-align: right;" class="two wide column">
+                </div>
+                <div class="six wide column">
+                    <!--<button (click)="createBtn()" class="ui primary submit button" type="submit" id="create">Create</button>-->
+                    <button (click)="updateBtn()" class="ui primary submit button" type="submit" id="update">Update</button>
+                </div>
+            </div>
+        </form>
+
+    </div>
+    <div class="actions">
+        <div class="ui cancel button">Cancel</div>
+    </div>
+</div>

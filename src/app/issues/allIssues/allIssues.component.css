@@ -1,0 +1,15 @@
+    .centered-and-cropped {
+        object-fit: cover
+    }
+    
+    .crop img {
+        width: 400px;
+        height: 300px;
+        position: absolute;
+        clip: rect(0px, 200px, 150px, 0px);
+    }
+    
+    img {
+        max-width: 100%;
+        /* This rule is very important, please do not ignore this! */
+    }

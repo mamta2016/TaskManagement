@@ -1,0 +1,71 @@
+.mainDiv {
+    width: 100%;
+    height: 100%;
+}
+
+#button1 {
+    margin: 1%;
+}
+
+#button2 {
+    margin: 1%;
+    margin-left: 10%;
+}
+
+#header {
+    height: 10%;
+    background-color: slateblue;
+}
+
+#description {
+    border: 1px solid skyblue;
+    border-radius: 5px;
+    width: 100%;
+    margin: 1%;
+    padding-bottom: 1%;
+    height: 1%;
+}
+
+#users {
+    border: 1px solid skyblue;
+    border-radius: 5px;
+    margin: 1%;
+    padding-bottom: 1%;
+    height: 150px;
+    text-align: center;
+    overflow-x: auto;
+}
+
+#update {
+    display: none;
+    float: right;
+}
+
+#create {
+    display: block;
+    float: right;
+}
+
+table {
+    border: 1px solid #dddddd;
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    border-radius: 2px;
+}
+
+th {
+    text-align: left;
+    padding: 8px;
+}
+
+td {
+    text-align: left;
+    padding: 8px;
+    cursor: pointer;
+    overflow: auto;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}

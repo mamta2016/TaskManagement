@@ -1,0 +1,30 @@
+#mainDiv {
+    background-color: #9ea0a3;
+    height: 100%;
+    width: 100%;
+}
+
+#containerDiv {
+    position: relative;
+    top: 20%;
+    left: 35%;
+    right: 35%;
+    width: 30%;
+    align-self: center;
+    font-weight: bold;
+    color: black;
+    background-color: white;
+}
+
+#email {
+    margin-top: 10px;
+}
+
+#pwd {
+    margin-top: 10px;
+}
+
+img {
+    max-width: 100%;
+    /* This rule is very important, please do not ignore this! */
+}

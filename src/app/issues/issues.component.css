@@ -1,0 +1,39 @@
+#leftHeader {
+    background-color: lightseagreen;
+    height: 10%;
+    padding: 0.7%;
+    padding-left: 2%;
+}
+
+#nav {
+    height: 10%;
+    background-color: whitesmoke;
+    padding: 0.5%;
+    border-bottom: .1px solid lightskyblue;
+}
+
+#issue {
+    text-align: left;
+    float: left;
+    padding-right: 2%;
+    padding-left: 2%;
+}
+
+#track {
+    text-align: left;
+    float: left;
+}
+
+#rightNav {
+    background-color: grey;
+    text-align: center;
+    width: 10%;
+    height: auto;
+    float: right;
+    position: relative;
+}
+
+#member {
+    position: relative;
+    background-color: lightseagreen;
+}

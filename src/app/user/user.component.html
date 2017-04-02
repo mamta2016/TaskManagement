@@ -1,0 +1,45 @@
+<div id="headerMain">
+    <div style="float: left;">
+        <!--<div data-content="userAddress" data-variation="basic">
+            <h2> <i class="user icon"></i></h2>
+        </div>-->
+        <!--<h2 (mouseover)="{{userAddress}}"><i class="user icon"></i></h2>-->
+    </div>
+    <div>
+        <h3 (click)="logOut()" style="color: white;cursor: pointer;float: right;">
+            LogOut
+        </h3>
+    </div>
+</div>
+<div style="width: 100%;" class="ui bottom attached segment pushable">
+    <div class="ui visible inverted left vertical sidebar menu">
+        <nav>
+            <!--<a class="item" (click)=" onMyProjectClick() ">
+                My Projects
+            </a>-->
+            <a class="item" [routerLink]=" ['./tasks'] ">
+                My Tasks
+            </a>
+            <!-- <a class="item" [routerLink]=" ['./bugs'] ">
+                My Bugs
+            </a>-->
+            <a class="item" (click)=" onBugsClick() ">
+                My Bugs
+            </a>
+            <a class="item" [routerLink]=" ['./calendar',554] ">
+                My Calendar
+            </a>
+            <a class="item" [routerLink]=" ['./timesheet'] ">
+                My Timesheet
+            </a>
+            <a class="item" [routerLink]=" ['./reports'] ">
+                Reports Gantt Charts
+            </a>
+        </nav>
+    </div>
+    <div style="width: 80%;padding-right:2%;" class="pusher">
+        <div style="margin: 0.1%;" class="ui basic segment">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>

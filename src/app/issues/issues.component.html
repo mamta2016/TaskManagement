@@ -1,0 +1,34 @@
+<div class="ui bottom attached segment pushable" style="position: relative;">
+    <div id="rightNav" class="ui thin visible inverted right vertical sidebar menu">
+        <h3 id="member" class="item">
+            Members
+        </h3>
+        <a class="item" *ngFor="let user of userRole" style="position: relative;">
+            {{user.name.first}}
+        </a>
+    </div>
+    <div style="width: 90%;">
+        <div style="position: relative;">
+            <div id="leftHeader">
+                <button class="ui red button" (click)="goToHome()">Home</button>
+            </div>
+            <div class="ui top attached button " style="border-radius:0px ;text-align: left;padding: 1%;padding-left: 5%;cursor: default">
+                <nav>
+                    <span>
+                        <a [routerLink]=" ['./issue'] ">
+                        Overview
+                        </a>
+                    </span>
+                    <span style="padding-left: 5%;">
+                        <a [routerLink]=" ['./aIssues'] ">
+                          Issues
+                        </a>
+                    </span>
+                </nav>
+            </div>
+        </div>
+        <div style="width: 95%;">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>

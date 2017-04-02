@@ -1,0 +1,38 @@
+<!--<div type="filepicker-preview" data-fp-url="https://cdn.filepicker.io/api/file/gyvWVLRgp8e6G8X1iIw4" style="width:75%; height:500px"> </div>-->
+<!--<input (change)="uploadImage($event)" type="file" [(ngModel)]="image" name='image' value="image">
+<br>
+<div style="position: relative;top: 15%;">
+    <img id="selectedImage" src="">
+</div>-->
+<!--<lead #lead>
+    <section>Section Content</section>
+    <div class="class-select">
+        div with .class-select
+    </div>
+    <footer>Footer Content</footer>
+    <header>Header Content</header>
+</lead>-->
+<div id="headerMain">
+    <h3 style="color: white;cursor: pointer;" class="ui right floated header">
+        Welcome to Login
+    </h3>
+</div>
+<div id="mainDiv">
+    <div id="containerDiv" class="ui inverted segment">
+        <form class="ui form" name="myForm">
+            <label style="display: none;">{{_id}}</label>
+            <div>
+                <label id="lable1">User Name:</label>
+                <input type="email" id="email" [(ngModel)]="email" name='email' required>
+            </div><br>
+            <div id="div2" style="margin-bottom: 10px;">
+                <label id="lable2">Password:</label>
+                <input type="password" id="pwd" [(ngModel)]="password" name='password' required>
+            </div>
+            <div id="msg" style="display: none;color: red;">
+                <p>user does not exist</p>
+            </div>
+            <button (click)="getData()" class="ui blue button" id="sinIn">Sin In</button>
+        </form>
+    </div>
+</div>
